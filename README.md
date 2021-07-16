@@ -1,4 +1,4 @@
-# noise-curve-secp256k1
+# noise-curve-secp
 
 `secp256k1` elliptic curve operations for use with [`noise-handshake`](https://github.com/chm-diederichs/noise-handshake)
 
