@@ -13,11 +13,11 @@ module.exports = {
   SKLEN,
   ALG,
   name: ALG,
-  generateKeypair,
+  generateKeyPair,
   dh
 }
 
-function generateKeypair (privKey) {
+function generateKeyPair (privKey) {
   const ctx = secp.secp256k1_context_create(secp.secp256k1_context_SIGN)
 
   if (privKey) assert(secp.secp256k1_ec_seckey_verify(ctx, privKey))
