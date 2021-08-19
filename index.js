@@ -12,6 +12,7 @@ module.exports = {
   PKLEN,
   SKLEN,
   ALG,
+  name: ALG,
   generateKeypair,
   dh
 }
