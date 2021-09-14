@@ -1,6 +1,6 @@
 {
   "name": "noise-curve-secp",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "`secp256k1` elliptic curve operations for use with [`noise-handshake`](https://github.com/chm-diederichs/noise-handshake)",
   "main": "index.js",
   "scripts": {
