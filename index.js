@@ -37,13 +37,13 @@ function generateKeyPair (privKey) {
   return keyPair
 }
 
-function dh (pk, lsk) {
-  assert(lsk.byteLength === SKLEN)
-  assert(pk.byteLength === PKLEN)
+function dh (publicKey, { secretKey }) {
+  assert(secretKey.byteLength === SKLEN)
+  assert(publicKey.byteLength === PKLEN)
 
   const point = Buffer.alloc(secp.secp256k1_PUBKEYBYTES)
   const ctx = secp.secp256k1_context_create(secp.secp256k1_context_SIGN)
-  secp.secp256k1_ec_pubkey_parse(ctx, point, pk)
+  secp.secp256k1_ec_pubkey_parse(ctx, point, publicKey)
 
   const output = Buffer.alloc(DHLEN)
 
@@ -51,7 +51,7 @@ function dh (pk, lsk) {
     ctx,
     output,
     point,
-    lsk,
+    secretKey,
     Buffer.alloc(0)
   )
 
